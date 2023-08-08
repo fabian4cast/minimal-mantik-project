@@ -4,4 +4,4 @@ entry_points:
   main:
     parameters:
       output: string
-    command: echo {output}
+    command: echo "{output}"
