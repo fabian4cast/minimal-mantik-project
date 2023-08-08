@@ -1,0 +1,7 @@
+name: simple-mantik-project
+
+entry_points:
+  main:
+    parameters:
+      output: string
+    command: echo {output}
