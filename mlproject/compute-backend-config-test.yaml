@@ -1,0 +1,15 @@
+UnicoreApiUrl: https://unicore.dev2.cloud.mantik.ai/DEMO-SITE/rest/core
+Resources:
+  Nodes: 1
+  Queue: batch
+Environment:
+  Variables:
+    TEST_ENV_VAR: test-value
+  PreRunCommand:
+    Command: echo "running precommand"
+    ExecuteOnLoginNode: false
+  PostRunCommand:
+    Command: |
+      echo "running postcommand"
+      echo "Environment variable value: ${TEST_ENV_VAR}"
+    ExecuteOnLoginNode: false
