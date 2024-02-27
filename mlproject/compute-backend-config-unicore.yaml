@@ -1,16 +1,12 @@
 UnicoreApiUrl: https://zam2125.zam.kfa-juelich.de:9112/JUWELS/rest/core
 Environment:
-  PreRunCommand:
-    ExecuteOnLoginNode: false
-    Command: echo "running precommand"
-  PostRunCommand:
-    ExecuteOnLoginNode: false
-    # Using a blank line in a multi-line string doesn't require a semicolon (;)
-    Command: |
-      echo "running postcommand"
-      echo "Environment variable value: ${TEST_ENV_VAR}"
   Variables:
     TEST_ENV_VAR: test-value
+  PreRunCommandOnComputeNode: |
+    echo "running precommand"
+  PostRunCommandOnComputeNode: |
+    echo "running postcommand"
+    echo "Environment variable value: ${TEST_ENV_VAR}"
 Resources:
   Queue: devel
   Nodes: 1
