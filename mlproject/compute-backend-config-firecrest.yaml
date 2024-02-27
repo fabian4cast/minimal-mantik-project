@@ -9,9 +9,8 @@ Environment:
   PostRunCommand:
     ExecuteOnLoginNode: false
     # Using a blank line in a multi-line string doesn't require a semicolon (;)
-    Command: >
+    Command: |
       echo "running postcommand"
-
       echo "Environment variable value: ${TEST_ENV_VAR}"
   Variables:
     TEST_ENV_VAR: test-value
