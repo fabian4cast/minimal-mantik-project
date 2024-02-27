@@ -1,0 +1,21 @@
+Firecrest:
+  ApiUrl: https://firecrest.cscs.ch
+  TokenUrl: https://auth.cscs.ch/auth/realms/firecrest-clients/protocol/openid-connect/token
+  Machine: daint
+Environment:
+  PreRunCommand:
+    ExecuteOnLoginNode: false
+    Command: echo "running precommand"
+  PostRunCommand:
+    ExecuteOnLoginNode: false
+    # Using a blank line in a multi-line string doesn't require a semicolon (;)
+    Command: >
+      echo "running postcommand"
+
+      echo "Environment variable value: ${TEST_ENV_VAR}"
+  Variables:
+    TEST_ENV_VAR: test-value
+Resources:
+  Queue: normal
+  Nodes: 1
+
