@@ -5,11 +5,8 @@ Firecrest:
 Environment:
   Variables:
     TEST_ENV_VAR: test-value
-  PreRunCommandOnComputeNode: |
-    echo "running precommand"
-  PostRunCommandOnComputeNode: |
-    echo "running postcommand"
-    echo "Environment variable value: ${TEST_ENV_VAR}"
+  PreRunCommandOnComputeNode: echo "running precommand"
+  PostRunCommandOnComputeNode: 'echo "running postcommand, environment variable value: ${TEST_ENV_VAR}"'
 Resources:
   Queue: normal
   Nodes: 1
